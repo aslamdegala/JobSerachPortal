@@ -1,0 +1,64 @@
+<div class="hidden">
+  <div class="left">
+    <app-update-profile (data)="Parent($event)"></app-update-profile>
+  </div>
+</div>
+
+<div class="right">
+  <div>
+    <div class="form-outline">
+      <label class="form-label" for="sorting"></label>
+
+      <select
+        id="sorting"
+        class="form-control"
+        [(ngModel)]="sorting"
+        [ngModelOptions]="{ standalone: true }"
+        style="width: 20%; margin-left: 70%"
+      >
+        <option value="-1" selected>Default</option>
+
+        <option value="0">Assending</option>
+
+        <option value="1">Desending</option>
+      </select>
+    </div>
+    <div
+      class="alert alert-danger mt-2"
+      style="text-align: center; margin: 20%; align-content: center"
+      *ngIf="flag === true"
+    >
+      Jobs Not Found :(
+    </div>
+    <div class="container">
+      <div class="card" *ngFor="let job of Jobs">
+        <div class="card__header" routerLink="/ViewJob/{{ job.jobId }}">
+          <span class="tag tag-blue m-4">{{ job.jobType }}</span>
+
+          <img
+            src="assets/ima3.jpg"
+            alt="card__image"
+            class="card__image"
+            width="75"
+            height="75"
+            style="border-radius: 50%"
+          />
+          <span class="tag tag-blue m-4">{{ job.companyName }}</span>
+        </div>
+        <div class="card__body">
+          <h4>{{ job.jobTitle }}</h4>
+          <p>
+            <i class="fa fa-map-marker" style="font-size: 20px"></i>
+            {{ job.jobLocation }}
+          </p>
+        </div>
+        <div class="card__footer"></div>
+      </div>
+      <pagination
+        [totalItems]="pages"
+        class="pgnition"
+        (pageChanged)="pageChanged($event)"
+      ></pagination>
+    </div>
+  </div>
+</div>

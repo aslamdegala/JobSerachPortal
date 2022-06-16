@@ -1,0 +1,148 @@
+<div class="home">
+  <carousel>
+    <slide>
+      <img
+        src="assets/ADDJOB2.jpg"
+        alt="first slide"
+        style="width: 100%; height: 50%"
+      />
+      <div class="carousel-caption d-none d-md-block">
+        <h1 class="text-dark">Find Your Dream Job</h1>
+      </div>
+    </slide>
+    <slide>
+      <img src="assets/imag1.jpg" alt="second slide" style="width: 100%" />
+      <div class="carousel-caption d-none d-md-block">
+        <h1 class="text-dark m-5 p-5">Place in Your Dream Company</h1>
+      </div>
+    </slide>
+    <slide>
+      <img src="assets/imag22.jpg" alt="third slide" style="width: 100%" />
+      <div class="carousel-caption d-none d-md-block">
+        <h1 class="text-dark">Connect with Oppurtunites</h1>
+      </div>
+    </slide>
+  </carousel>
+</div>
+<div class="container">
+  <div class="card" *ngIf="Role == 'admin'">
+    <div class="card__header" routerLink="/AddJob">
+      <img
+        src="assets/ima3.jpg"
+        alt="card__image"
+        class="card__image add"
+        width="600"
+        height="300"
+      />
+    </div>
+    <div class="card__body">
+      <span class="tag tag-blue">Job Search</span>
+      <h4>Add New Job</h4>
+      <p>Here You Can Create a Job</p>
+    </div>
+    <div class="card__footer"></div>
+  </div>
+  <div class="card">
+    <div class="card__header" routerLink="/ViewJob">
+      <img
+        src="assets/job11.png"
+        alt="card__image"
+        class="card__image"
+        width="600"
+        height="300"
+      />
+    </div>
+    <div class="card__body">
+      <span class="tag tag-brown">Job Search</span>
+      <h4>View Job List</h4>
+      <p>Here You Can View the Jobs</p>
+    </div>
+    <div class="card__footer"></div>
+  </div>
+  <div class="card">
+    <div class="card__header" routerLink="/Register">
+      <img
+        src="assets/ADDJOB1.png"
+        alt="card__image"
+        class="card__image"
+        width="600"
+        height="300"
+      />
+    </div>
+    <div class="card__body">
+      <span class="tag tag-red">Job Search</span>
+      <h4>Update Profile</h4>
+      <p>Here You Can Update your Profile</p>
+    </div>
+    <div class="card__footer"></div>
+  </div>
+  <div class="card" *ngIf="Role == 'admin'">
+    <div class="card__header" routerLink="/DeleteJob">
+      <img
+        src="assets/job44.jpg"
+        alt="card__image"
+        class="card__image"
+        width="600"
+        height="300"
+      />
+    </div>
+    <div class="card__body">
+      <span class="tag tag-voilet">Job Search</span>
+      <h4>Delete Jobs</h4>
+      <p>Here You Can Delete a Jobs</p>
+    </div>
+    <div class="card__footer"></div>
+  </div>
+  <div class="card">
+    <div class="card__header" routerLink="/SearchJob">
+      <img
+        src="assets/job22.png"
+        alt="card__image"
+        class="card__image"
+        width="600"
+        height="300"
+      />
+    </div>
+    <div class="card__body">
+      <span class="tag tag-pink">Job Search</span>
+      <h4>Search Jobs</h4>
+      <p>Here You Can Search Jobs</p>
+    </div>
+    <div class="card__footer"></div>
+  </div>
+  <div class="card">
+    <div class="card__header" routerLink="/SavedJob">
+      <img
+        src="assets/jobd.png"
+        alt="card__image"
+        class="card__image"
+        width="600"
+        height="300"
+      />
+    </div>
+
+    <div class="card__body">
+      <span class="tag tag-green">Job Search</span>
+      <h4>Saved Jobs</h4>
+      <p>Here You Can View the Saved Jobs</p>
+    </div>
+    <div class="card__footer"></div>
+  </div>
+  <div class="card">
+    <div class="card__header" routerLink="/AppliedJob">
+      <img
+        src="assets/applied.png"
+        alt="card__image"
+        class="card__image"
+        width="600"
+        height="300"
+      />
+    </div>
+    <div class="card__body">
+      <span class="tag tag-green">Job Search</span>
+      <h4>Applied Jobs</h4>
+      <p>Here You Can View Applied Jobs</p>
+    </div>
+    <div class="card__footer"></div>
+  </div>
+</div>

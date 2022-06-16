@@ -1,0 +1,90 @@
+<div class="container-fluid body">
+  <div class="row">
+    <div class="col-md-12 navbar" style="font-size: px; color: black">
+      <form>
+        <div class="form-outline mb-1 mt-1">
+          <label class="form-label" for="type"> Job Type</label
+          ><select
+            id="jobType"
+            class="form-control"
+            [(ngModel)]="jobType"
+            [ngModelOptions]="{ standalone: true }"
+          >
+            <option value="Any" selected>Any Type</option>
+            <option value="Full Time">Full Time</option>
+
+            <option value="Part Time">Part Time</option>
+
+            <option value="Free Lancer">Free Lancer</option>
+
+            <option value="Remote">Remote</option>
+          </select>
+        </div>
+
+        <div class="form-outline mb-1 mt-1">
+          <label class="form-label" for="title">Title</label
+          ><input
+            type="text"
+            id="title"
+            class="form-control"
+            placeholder="Job Title"
+            [(ngModel)]="jobTitle"
+            [ngModelOptions]="{ standalone: true }"
+          />
+        </div>
+
+        <div class="form-outline mb-1 mt-1">
+          <label class="form-label" for="Location">JOb Location</label
+          ><input
+            type="text"
+            id="jobLocation"
+            class="form-control"
+            placeholder="Job location"
+            [(ngModel)]="jobLocation"
+            [ngModelOptions]="{ standalone: true }"
+          />
+        </div>
+
+        <div class="form-outline mb-1 mt-1">
+          <label class="form-label" for="Price">Salary</label
+          ><input
+            type="number"
+            id="salary"
+            class="form-control"
+            placeholder="Salary"
+            [(ngModel)]="salary"
+            [ngModelOptions]="{ standalone: true }"
+          />
+        </div>
+
+        <div class="form-outline mb-1 mt-1">
+          <label class="form-label" for="skill">Skills</label
+          ><select
+            id="skill"
+            class="form-control"
+            [(ngModel)]="skill"
+            [ngModelOptions]="{ standalone: true }"
+          >
+            <option value="Any" selected>Any Skill</option>
+            <option value="java">Java</option>
+
+            <option value="dotnet">Dot Net</option>
+            <option value="mathsexperts">Maths Experts</option>
+            <option value="Data Science">Data Science</option>
+          </select>
+        </div>
+
+        <div class="text-center pt-1 pb-1 form">
+          <button
+            type="submit"
+            class="form-control btn btn-primary btn-lg btn-block mt-4 button"
+            (click)="filter()"
+          >
+            <i class="fa fa-search text-white lock" aria-hidden="true"></i
+            >Filter
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

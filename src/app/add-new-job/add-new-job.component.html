@@ -1,0 +1,126 @@
+<div class="body">
+  <div class="split left hidden-mobile">
+    <img class="rounded" src="assets/Register.jpg" alt="Login" />
+
+    <div class="bottom-left">
+      <h1 class="text-success tit">Job Search Portal</h1>
+      <pre class="para text-danger">
+        "If opportunity doesn't knock, 
+        build a door."
+      </pre>
+    </div>
+  </div>
+
+  <div class="split right" style="margin-bottom: 50%">
+    <h1 class="text-success h1 wel m-2">Welcome Job Search</h1>
+
+    <form [formGroup]="formdata" (ngSubmit)="AddJob()">
+      <div class="form-group form-box inputiteam">
+        <input
+          type="text"
+          name="jobTitle"
+          ngModel
+          formControlName="jobTitle"
+          class="form-control p-md-2"
+          placeholder="Job Title"
+          required
+        />
+      </div>
+
+      <div class="form-group form-box inputiteam">
+        <input
+          type="text"
+          name="companyName"
+          ngModel
+          class="form-control p-md-2"
+          placeholder="Company Name"
+          required
+          formControlName="companyName"
+        />
+      </div>
+      <div class="form-group form-box inputiteam">
+        <textarea
+          type="text"
+          class="md-textarea form-control"
+          name="jobDescription"
+          ngModel
+          mdbInput
+          required
+          placeholder="Job Description"
+          formControlName="jobDescription"
+        ></textarea>
+      </div>
+      <div class="form-group form-box inputiteam">
+        <input
+          type="text"
+          name="jobLocation"
+          ngModel
+          class="form-control p-md-2"
+          placeholder="Job Location"
+          required
+          formControlName="jobLocation"
+        />
+      </div>
+      <div class="form-group form-box inputiteam input-wrapperRole">
+        <select
+          class="form-control"
+          name="jobType"
+          aria-placeholder="Job Type"
+          ngModel
+          formControlName="jobType"
+        >
+          <option *ngFor="let item of jobTypes" [value]="item" ngModel>
+            {{ item }}
+          </option>
+        </select>
+      </div>
+
+      <div class="form-group form-box inputiteam">
+        <input
+          type="number"
+          name="experience"
+          ngModel
+          class="form-control p-md-2"
+          autocomplete="off"
+          placeholder="Experience"
+          required
+          formControlName="experience"
+        />
+      </div>
+
+      <div class="form-group form-box inputiteam">
+        <input
+          type="number"
+          name="salary"
+          ngModel
+          class="form-control p-md-2"
+          autocomplete="off"
+          required
+          placeholder="Salary"
+          formControlName="salary"
+        />
+      </div>
+      <div class="form-group form-box inputiteam">
+        <input
+          type="text"
+          name="skill"
+          ngModel
+          class="form-control p-md-2"
+          autocomplete="off"
+          required
+          placeholder="Skills"
+          formControlName="skill"
+        />
+      </div>
+
+      <div class="d-grid m-3">
+        <button type="submit" class="btn btn-outline-success btn-block">
+          Add Job
+        </button>
+      </div>
+      <div class="alert alert-danger mt-3" *ngIf="errMsg.length > 0">
+        {{ errMsg }}
+      </div>
+    </form>
+  </div>
+</div>

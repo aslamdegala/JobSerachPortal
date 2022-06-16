@@ -1,0 +1,233 @@
+<div class="body">
+  <div class="split left hidden-mobile">
+    <img class="rounded" src="assets/Register.jpg" alt="Login" />
+    <div class="topleft">
+      <button
+        type="button"
+        routerLink=""
+        class="btn btn-success m-1"
+        *ngIf="LoggedInCheack == false"
+      >
+        Log in
+      </button>
+      <button
+        type="button"
+        routerLink="/Register"
+        class="btn btn-success m-1"
+        *ngIf="LoggedInCheack == false"
+      >
+        Registration
+      </button>
+    </div>
+
+    <div class="bottom-left">
+      <h1 class="text-success tit">Job Search Portal</h1>
+      <pre class="para text-danger">
+        "If opportunity doesn't knock, 
+        build a door."
+      </pre>
+    </div>
+  </div>
+
+  <div class="split right">
+    <h1 class="text-success h1 wel">Welcome Job Search Portal</h1>
+    <p class="sign text-success" *ngIf="LoggedInCheack == false">
+      Create your Account
+    </p>
+    <p class="sign text-success" *ngIf="LoggedInCheack == true">
+      Update your Profile here..
+    </p>
+
+    <div>
+      <div class m-4 *ngIf="LoggedInCheack == false" style="text-align: center">
+        <button type="button" class="btn btn-success btn-floating m-3">
+          <i class="fa fa-facebook-f"></i>
+        </button>
+
+        <button type="button" class="btn btn-success btn-floating m-3">
+          <i class="fa fa-twitter"></i>
+        </button>
+        <button type="button" class="btn btn-success btn-floating m-3">
+          <i class="fa fa-google"></i>
+        </button>
+
+        <button type="button" class="btn btn-success btn-floating m-3">
+          <i class="fa fa-linkedin-square"></i>
+        </button>
+      </div>
+
+      <div>
+        <p class="text-center" *ngIf="LoggedInCheack == false">
+          ----------------------Or----------------------
+        </p>
+      </div>
+      <form #formdata="ngForm" (ngSubmit)="RegisterUser(formdata.value)">
+        <div class="form-group form-box inputiteam input-wrapperName">
+          <input
+            type="text"
+            name="Name"
+            ngModel
+            class="form-control p-md-2"
+            placeholder="Name"
+            required
+          />
+        </div>
+
+        <div
+          class="form-group form-box inputiteam input-wrapperName"
+          *ngIf="LoggedInCheack == false"
+        >
+          <input
+            type="text"
+            name="UserName"
+            ngModel
+            class="form-control p-md-2"
+            placeholder="User Name"
+            required
+          />
+        </div>
+
+        <div
+          class="form-group form-box inputiteam input-wrapperEmail"
+          *ngIf="LoggedInCheack == false"
+        >
+          <input
+            type="email"
+            name="Email"
+            ngModel
+            class="form-control p-md-2"
+            placeholder="Email"
+            required
+          />
+        </div>
+        <div class="form-group form-box inputiteam input-wrapperPassword">
+          <input
+            type="password"
+            name="Password"
+            ngModel
+            class="form-control p-md-2"
+            autocomplete="off"
+            placeholder="Password"
+            required
+          />
+        </div>
+        <div
+          class="form-group form-box inputiteam input-wrapperRole"
+          *ngIf="LoggedInCheack == false"
+        >
+          <select class="form-control" name="Role" ngModel>
+            <option *ngFor="let item of Role" [value]="item">
+              {{ item }}
+            </option>
+          </select>
+        </div>
+        <div class="form-group form-box inputiteam input-wrapperPhone">
+          <input
+            type="tel"
+            name="PhoneNumber"
+            ngModel
+            class="form-control p-md-2"
+            autocomplete="off"
+            required
+            placeholder="Phone Number"
+          />
+        </div>
+
+        <div class="form-group form-box inputiteam input-wrapperAddress">
+          <textarea
+            type="text"
+            class="md-textarea form-control"
+            name="Address"
+            ngModel
+            mdbInput
+            required
+            placeholder="Address"
+          ></textarea>
+        </div>
+        <div
+          class="form-group form-box inputiteam input-wrapperName"
+          style="align-items: left"
+          *ngIf="LoggedInCheack == true"
+        >
+          <label for="UserName" class="text-Dark"
+            ><b>User Name :</b> {{ UserName }}</label
+          >
+        </div>
+        <div
+          class="form-group form-box inputiteam input-wrapperName"
+          style="align-items: left"
+          *ngIf="LoggedInCheack == true"
+        >
+          <label for="UserName" class="text-Dark"
+            ><b>User Id :</b> {{ UserId }}</label
+          >
+        </div>
+        <div
+          class="form-group form-box inputiteam input-wrapperEmail"
+          style="align-items: left"
+          *ngIf="LoggedInCheack == true"
+        >
+          <label for="UserName" class="text-Dark"
+            ><b>User Email :</b>{{ UserEmail }}</label
+          >
+        </div>
+        <div
+          class="form-group form-box inputiteam input-wrapperName"
+          style="align-items: left"
+          *ngIf="LoggedInCheack == true"
+        >
+          <label for="UserName" class="text-Dark"
+            ><b>User Role :</b>{{ UserRole }}</label
+          >
+        </div>
+
+        <div class="d-flex justify-content-between align-items-center">
+          <!-- Checkbox -->
+          <div class="form-check mb-0" *ngIf="LoggedInCheack == false">
+            <input
+              class="form-check-input me-2"
+              type="checkbox"
+              value=""
+              id="form2Example3"
+              required
+            />
+
+            <label
+              class="form-check-label align-items-center"
+              for="terms and contiton"
+            >
+              I agree to the terms of service
+            </label>
+          </div>
+        </div>
+
+        <div class="d-grid">
+          <button
+            type="submit"
+            class="btn btn-outline-success btn-block m-3 reg"
+            *ngIf="LoggedInCheack == false"
+          >
+            Register
+          </button>
+          <button
+            type="submit"
+            class="btn btn-outline-success btn-block m-3 upd"
+            *ngIf="LoggedInCheack == true"
+          >
+            Update
+          </button>
+          <p
+            class="small fw-bold mt-2 pt-1 mb-0"
+            *ngIf="LoggedInCheack == false"
+          >
+            Already a member?
+            <a href="" routerLink="" class="link-success li">Login Here</a>
+          </p>
+        </div>
+        <div class="alert alert-danger mt-3 msg" *ngIf="errMsg.length > 0">
+          {{ errMsg }}
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

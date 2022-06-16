@@ -1,0 +1,123 @@
+<div *ngFor="let job of jobs">
+  <div class="row">
+    <div class="col-1 p-4">
+      <img
+        src="assets/imag1.jpg"
+        alt="job"
+        style="height: 100px; width: 100px"
+      />
+    </div>
+    <div class="col-6">
+      <h3 style="text-align: left; margin-top: 10%">
+        {{ job.jobTitle }}
+      </h3>
+    </div>
+    <div class="col-3">
+      <button
+        class="p-2"
+        style="margin-top: 20%; background-color: rgb(178, 240, 162)"
+      >
+        Apply Now
+      </button>
+    </div>
+  </div>
+  <div class="left m-2">
+    <h4>Job Description</h4>
+    <p class="m-3">
+      {{ job.jobDescription }}
+      We are looking for a Corporate Accountant to prepare financial statements
+      and oversee our budgeting and forecasting. We’ll rely on you to provide
+      advice to support our company’s decision-making.
+    </p>
+    <div class="m-3">
+      <h4>Key Responsibilites</h4>
+      <ul>
+        <li>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam ipsam
+          fuga odit cumque ipsum
+        </li>
+        <li>
+          beatae corrupti, itaque accusamus aliquam ut eligendi officiis
+          mollitia consequatur tempore nihil dolore, sint accusantium natus.
+        </li>
+        <li>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam ipsam
+          fuga odit cumque ipsum
+        </li>
+        <li>
+          beatae corrupti, itaque accusamus aliquam ut eligendi officiis
+          mollitia consequatur tempore nihil dolore, sint accusantium natus.
+        </li>
+        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
+        <li>
+          beatae corrupti, itaque accusamus aliquam ut eligendi officiis
+          mollitia
+        </li>
+      </ul>
+    </div>
+    <div class="m-3">
+      <h4>Experience</h4>
+      <ul>
+        <li>Experience of {{ job.experience }} years</li>
+        <li>Required Skill</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="right">
+    <h6 class="p-4" style="font-size: large; font-weight: bold">
+      Job Overview
+    </h6>
+
+    <div
+      style="text-align: left; font-size: large; margin-left: 25px"
+      class="p-2"
+    >
+      <b>
+        <i class="fa fa-map-marker" style="font-size: 20px"></i> Job Location</b
+      ><br />
+      {{ job.jobLocation }}
+    </div>
+    <div
+      style="text-align: left; font-size: large; margin-left: 25px"
+      class="p-2"
+    >
+      <b>
+        <i class="fa fa-get-pocket" style="font-size: 20px"></i> Company Name</b
+      ><br />
+      {{ job.companyName }}
+    </div>
+    <div
+      style="text-align: left; font-size: large; margin-left: 25px"
+      class="p-2"
+    >
+      <b> <i class="fa fa-dollar" style="font-size: 20px"></i> Offered Salary</b
+      ><br />
+      {{ job.salary }}
+    </div>
+    <div
+      style="text-align: left; font-size: large; margin-left: 25px"
+      class="p-2"
+    >
+      <b> <i class="fa fa-safari" style="font-size: 20px"></i> Experience</b
+      ><br />
+      {{ job.experience }}
+    </div>
+    <div
+      style="text-align: left; font-size: large; margin-left: 25px"
+      class="p-2"
+    >
+      <b> <i class="fa fa-pie-chart" style="font-size: 20px"></i> Job Type</b
+      ><br />
+      {{ job.jobType }}
+    </div>
+    <div
+      style="text-align: left; font-size: large; margin-left: 25px"
+      class="p-2"
+    >
+      <b> <i class="fa fa-intersex" style="font-size: 20px"></i> Gender</b
+      ><br />
+      Male
+    </div>
+  </div>
+</div>

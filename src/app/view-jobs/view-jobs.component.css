@@ -1,0 +1,24 @@
+left,
+.right {
+  height: 100%;
+
+  position: fixed;
+  z-index: 1;
+
+  bottom: 40%;
+  overflow-x: hidden;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  /** background-color: rgb(178, 240, 162);*/
+}
+.left {
+  left: 0;
+  top: 0;
+  width: 75%;
+}
+.right {
+  top: 6%;
+  right: 0;
+  background-color: rgb(178, 240, 162);
+  width: 25%;
+}
